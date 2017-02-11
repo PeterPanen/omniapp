@@ -1,0 +1,30 @@
+{
+  "name": "omniapp",
+  "version": "0.0.1",
+  "description": "Component based content management",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon --watch server/src --ext js,json,html --exec babel-node -- server/src/index.js",
+    "start:prod": "cross-env NODE_ENV=production node server/build/index.js",
+    "prebuild": "rimraf server/build",
+    "build": "babel server/src --out-dir server/build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rasmus Knudsen",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^3.1.4",
+    "express": "^4.14.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-stage-1": "^6.22.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "rimraf": "^2.5.4"
+  }
+}
